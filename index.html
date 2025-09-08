@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="password-card">
+            <div class="header">
+                <h1>Password Generator</h1>
+                <p>Create secure passwords instantly</p>
+            </div>
+            
+            <div class="password-display">
+                <input type="text" id="passwordOutput" readonly placeholder="Generated password will appear here">
+                <button id="copyBtn" class="copy-btn" title="Copy to clipboard">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="controls">
+                <div class="length-control">
+                    <label for="lengthSlider">Password Length: <span id="lengthValue">12</span></label>
+                    <input type="range" id="lengthSlider" min="4" max="50" value="12" class="slider">
+                </div>
+
+                <div class="options">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="includeNumbers" checked>
+                        <label for="includeNumbers">Include Numbers (0-9)</label>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="includeSymbols" checked>
+                        <label for="includeSymbols">Include Symbols (!@#$%^&*)</label>
+                    </div>
+                </div>
+            </div>
+
+            <button id="generateBtn" class="generate-btn">Generate Password</button>
+            
+            <div id="feedback" class="feedback"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
